@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './components/themeUtils/GlobalStyles'
 import { lightTheme, darkTheme } from './components/themeUtils/Theme'
@@ -14,17 +14,80 @@ function App() {
   const [theme, setTheme] = useState('light')
 
   const themeSelector = () => {
-    theme === 'lightmode' ? setTheme('darkmode') : setTheme('lightmode')
+    theme === 'light' ? setTheme('dark') : setTheme('light')
   }
+
+  const osThemeHelper = () => {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark')
+    }
+  }
+
+  useEffect(() => {
+    osThemeHelper()
+  }, [])
 
   return (
     <ThemeProvider theme={ theme === 'light' ? lightTheme : darkTheme }>
       <GlobalStyles />
       <MainContainer>
         <Navbar />
-        <button onClick={themeSelector} >THEME</button>
 
         <LandingPage />
+        <button>About</button>
+        <button onClick={themeSelector} >THEME</button>
+
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
+        <h3>F I L L E R</h3>
       </MainContainer>
     </ThemeProvider>
   );

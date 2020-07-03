@@ -1,38 +1,31 @@
 import React from 'react'
 import styled from 'styled-components'
+import TitleText from './TitleText'
+import codeImgBlurred from '../../assets/Code_XLZpZAGEXyblurred.png'
 
+const LandingWrapper = styled.div`
+  height: 100vh;
+`
 
-const StyledTitle = styled.h1`
-  font-size: 1.8em;
-  line-height: 2.3rem;
-  text-align: ${props => "left" || props.align};
-  font-family: "Raleway", sans-serif;
-  font-weight: 400;
-  color: #000;
-  margin: 3rem 0 2rem 0;
-  padding: 0 2rem;
+const BackgroundImg = styled.div`
+  background-image: url(${codeImgBlurred});
+  
+  /* Full height */
+  height: 100%;
 
-  span {
-    a {
-      color: #0099ff;
-    }
-  }
-`;
+  /* Center and scale the image */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+`
 
 const LandingPage = () => {
+
   return (
-    <div>
-        <StyledTitle>
-          I’m Rudy Goldhaber, aspiring{" "}
-          <span>
-            <a href='https://www.linkedin.com/in/rudy-goldhaber/'>
-              Software Engineer
-            </a>
-          </span>
-          <br />
-          living in Venice, California.
-        </StyledTitle>
-    </div>
+    <LandingWrapper>
+      <BackgroundImg />
+      <TitleText />
+    </LandingWrapper>
   )
 }
 
