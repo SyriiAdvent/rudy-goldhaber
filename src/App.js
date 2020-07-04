@@ -4,6 +4,7 @@ import { GlobalStyles } from './components/themeUtils/GlobalStyles'
 import { lightTheme, darkTheme } from './components/themeUtils/Theme'
 import Navbar from './components/navigation/Navbar';
 import LandingPage from './components/landing/LandingPage';
+import StartPortfolio from './components/startPortfolio/StartPortfolio';
 
 const MainContainer = styled.div`
   margin: 0;
@@ -12,6 +13,7 @@ const MainContainer = styled.div`
 
 function App() {
   const [theme, setTheme] = useState('light')
+  const [pageInitilized, setPageInitilized] = useState(true)
 
   const themeSelector = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light')
@@ -23,6 +25,10 @@ function App() {
     }
   }
 
+  const updatePageInit = () => {
+    setPageInitilized(true)
+  }
+
   useEffect(() => {
     osThemeHelper()
   }, [])
@@ -30,65 +36,15 @@ function App() {
   return (
     <ThemeProvider theme={ theme === 'light' ? lightTheme : darkTheme }>
       <GlobalStyles />
-      <MainContainer>
+      { pageInitilized ? (
+        <MainContainer>
         <Navbar />
-
         <LandingPage />
-        <button>About</button>
-        <button onClick={themeSelector} >THEME</button>
-
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
-        <h3>F I L L E R</h3>
+        {/* <button>About</button>
+        <button onClick={themeSelector} >THEME</button> */}
       </MainContainer>
+      ) : <StartPortfolio updatePageInit={updatePageInit} />}
+      
     </ThemeProvider>
   );
 }
