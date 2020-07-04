@@ -5,6 +5,7 @@ import { lightTheme, darkTheme } from './components/themeUtils/Theme'
 import Navbar from './components/navigation/Navbar';
 import LandingPage from './components/landing/LandingPage';
 import StartPortfolio from './components/startPortfolio/StartPortfolio';
+import ProjectsWrapper from './components/projects/ProjectsWrapper';
 
 const MainContainer = styled.div`
   margin: 0;
@@ -42,6 +43,7 @@ function App() {
         <LandingPage />
         {/* <button>About</button>
         <button onClick={themeSelector} >THEME</button> */}
+        <ProjectsWrapper />
       </MainContainer>
       ) : <StartPortfolio updatePageInit={updatePageInit} />}
       
