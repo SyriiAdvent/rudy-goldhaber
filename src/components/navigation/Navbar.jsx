@@ -5,7 +5,7 @@ import LinksWrapper from './LinksWrapper'
 const NavContainer = styled.div`
   margin: 0;
   padding: 0;
-  height: 100px;
+  height: 5rem;
   width: 100%;
   color: #fff;
   display: flex;
@@ -15,7 +15,7 @@ const NavContainer = styled.div`
   background-color: rgba(0,0,0, 0.3);
   padding: 0;
   position: fixed;
-  z-index: 10;
+  z-index: 1;
 
   @media (max-width: 786px) {
     flex-direction: column;
