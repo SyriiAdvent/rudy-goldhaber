@@ -7,6 +7,7 @@ const NavContainer = styled.div`
   padding: 0;
   height: 100px;
   width: 100%;
+  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,6 +19,7 @@ const NavContainer = styled.div`
 
   @media (max-width: 786px) {
     flex-direction: column;
+    justify-content: space-around;
   }
 `
 

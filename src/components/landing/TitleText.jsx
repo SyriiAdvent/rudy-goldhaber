@@ -65,7 +65,7 @@ const TitleText = () => {
   return (
     <StyledTitle>
       <span style={{ width: '150px' }}>
-        I’m Rudy Goldhaber,{" "}
+        I’m Rudy Goldhaber {" "}
         <a href='https://www.linkedin.com/in/rudy-goldhaber/'>{titles}</a>
       </span>
       <br />

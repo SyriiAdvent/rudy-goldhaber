@@ -18,6 +18,7 @@ const LinkContainer = styled.ul`
 
   @media (max-width: 786px) {
     width: 100%;
+    padding-bottom: 5px;
   }
 `
 
