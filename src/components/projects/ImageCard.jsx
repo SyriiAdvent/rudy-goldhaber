@@ -7,21 +7,23 @@ import gAdminDash from '../../assets/projects/thegardenedu/4thegardenedu_adminDa
 import gStaffSection from '../../assets/projects/thegardenedu/5thegardenedu_staffSectoin.png'
 import gStaffAttendance from '../../assets/projects/thegardenedu/6thegardenedu_staffAttendance.png'
 
+const ImageCardContainer = styled.div`
+  width: 25rem;
+  height: 15rem;
+`
+
 const FloatingProjectImg = styled.div`
   background-image: url(${props => props.imgUrl});
-  
-  width: 20%;
   height: 100%;
-
-  /* Center and scale the image */
+  max-width: 100%;
   background-position: left top;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 `
 
 const ImageCard = () => {
   const [transitioned, setTransitioned] = useState(0)
-  const [currentImage, setCurrentImage] = useState([gLanding, gUserdash, gStudentDetails, gAdminDash, gStaffSection, gStaffAttendance])
+  const currentImage = [gLanding, gUserdash, gStudentDetails, gAdminDash, gStaffSection, gStaffAttendance]
 
   const imageSlider = () => {
     if(transitioned < currentImage.length) {
@@ -35,11 +37,12 @@ const ImageCard = () => {
 
   useEffect(() => {
     imageSlider()
-    console.log("init")
   }, [transitioned])
 
   return (
-    <FloatingProjectImg imgUrl={currentImage[transitioned]} />
+    <ImageCardContainer>
+      <FloatingProjectImg imgUrl={currentImage[transitioned]} />
+    </ImageCardContainer>
   )
 }
 
