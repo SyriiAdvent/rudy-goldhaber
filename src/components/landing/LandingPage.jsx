@@ -14,7 +14,7 @@ const BackgroundImg = styled.div`
   height: 100%;
 
   /* Center and scale the image */
-  background-position: center;
+  background-position: left top;
   background-repeat: no-repeat;
   background-size: cover;
 `

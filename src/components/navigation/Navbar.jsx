@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import LinksWrapper from './LinksWrapper'
 
 const NavContainer = styled.div`
+  margin: 0;
+  padding: 0;
   height: 100px;
   width: 100%;
   display: flex;
@@ -10,16 +12,28 @@ const NavContainer = styled.div`
   align-items: center;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0, 0.3);
-  
-  padding: 0 1rem 0 1rem;
-  /* border: 1px solid black; */
+  padding: 0;
   position: fixed;
+  z-index: 10;
+
+  @media (max-width: 786px) {
+    flex-direction: column;
+  }
+`
+
+const NameText = styled.h3`
+  font-size: 1.8rem;
+  margin-left: 1.5rem;
+
+  @media (max-width: 786px) {
+    margin: 0;
+  }
 `
 
 const Navbar = () => {
   return (
     <NavContainer>
-      <h3>Rudy Goldhaber</h3>
+      <NameText>Rudy Goldhaber</NameText>
       <LinksWrapper />
     </NavContainer>
   )
