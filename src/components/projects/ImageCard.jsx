@@ -7,41 +7,58 @@ import gAdminDash from '../../assets/projects/thegardenedu/4thegardenedu_adminDa
 import gStaffSection from '../../assets/projects/thegardenedu/5thegardenedu_staffSectoin.png'
 import gStaffAttendance from '../../assets/projects/thegardenedu/6thegardenedu_staffAttendance.png'
 
+import anime from 'animejs'
+
 const ImageCardContainer = styled.div`
-  width: 25rem;
-  height: 15rem;
+  width: 32rem;
+  height: 25rem;
+  
 `
 
 const FloatingProjectImg = styled.div`
   background-image: url(${props => props.imgUrl});
   height: 100%;
-  max-width: 100%;
-  background-position: left top;
+  width: 100%;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 `
 
-const ImageCard = () => {
+const ImageCard = props => {
   const [transitioned, setTransitioned] = useState(0)
   const currentImage = [gLanding, gUserdash, gStudentDetails, gAdminDash, gStaffSection, gStaffAttendance]
+  const direction = props.direction
+
+  const imageAnimate = () => {
+    return anime({
+      targets: (`${direction}`) === 'reverse' ? '.reverse' : '.animate-image',
+      translateX: (`${direction}`) === 'reverse' ? 2000 : -2000,
+      direction: 'alternate',
+      easing: 'easeInOutSine'
+    })
+  }
 
   const imageSlider = () => {
     if(transitioned < currentImage.length) {
       setTimeout(() => {
+        imageAnimate()
+      }, 1000)
+      setTimeout(() => {
         setTransitioned(transitioned + 1);
-      }, 2500);
-    } else {
+      }, 2500)
+    } 
+    else {
       setTransitioned(0)
     }
   }
 
   useEffect(() => {
-    imageSlider()
+      imageSlider()
   }, [transitioned])
 
   return (
     <ImageCardContainer>
-      <FloatingProjectImg imgUrl={currentImage[transitioned]} />
+      <FloatingProjectImg className={'animate-image ' + props.direction} imgUrl={currentImage[transitioned]} />
     </ImageCardContainer>
   )
 }
