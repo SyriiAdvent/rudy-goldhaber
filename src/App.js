@@ -25,6 +25,10 @@ function App() {
     }
   }
 
+  const updatePageInit = () => {
+    setPageInitilized(true)
+  }
+
   useEffect(() => {
     osThemeHelper()
   }, [])
@@ -39,7 +43,7 @@ function App() {
         {/* <button>About</button>
         <button onClick={themeSelector} >THEME</button> */}
       </MainContainer>
-      ) : <StartPortfolio />}
+      ) : <StartPortfolio updatePageInit={updatePageInit} />}
       
     </ThemeProvider>
   );

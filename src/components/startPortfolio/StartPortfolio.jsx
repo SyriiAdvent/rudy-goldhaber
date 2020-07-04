@@ -9,7 +9,7 @@ const LoadContainer = styled.div`
 `
 
 
-const StartPortfolio = () => {
+const StartPortfolio = props => {
   const [grid, setGrid] = useState({
     verticalGrid: [],
     horizontalGrid: []
@@ -21,7 +21,7 @@ const StartPortfolio = () => {
 
   const windowSizeHelper = () => {
     setWindowSize({
-      height: Math.floor(window.innerHeight / 20),
+      height: Math.floor(window.innerHeight / 20) - 1,
       width: Math.floor(window.innerWidth / 20)
     })
   }
@@ -47,20 +47,19 @@ const StartPortfolio = () => {
     })
   }
 
-  const Loading = () => {
-    // anime({
-    //   targets: 'staggering-grid-demo .el',
-    //   scale: [
-    //     {value: .1, easing: 'easeOutSine', duration: 500},
-    //     {value: 1, easing: 'easeInOutQuad', duration: 1200}
-    //   ],
-    //   delay: anime.stagger(200, {grid: [windowSize.width, windowSize.height], from: 'center'})
-    // });
-
+  const loadingAnim = () => {
     anime({
-      targets: '.grid .el',
-      rotate: '1turn'
-    });
+      targets: '.stagger-grid .el',
+      scale: [
+        {value: 0, easing: 'easeOutSine', duration: 500},
+        // {value: 1, easing: 'easeInOutQuad', duration: 1200}
+      ],
+      delay: anime.stagger(50, { 
+        grid: [
+          Math.floor(window.innerWidth / 20), 
+          Math.floor(window.innerHeight / 20) - 1
+        ], from: 'center' })
+    }).finished.then(() => props.updatePageInit())
   }
 
   useEffect(() => {
@@ -75,63 +74,17 @@ const StartPortfolio = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      anime({
-        targets: '.grid .el',
-        scaleX: 1.2,
-        scaleY: 1.2,
-        backgroundColor: '#000',
-        duration: 1000,
-        zIndex: 20
-        
-      }).finished.then(() => {
-        anime({
-          targets: '.grid .els',
-          scaleX: 0,
-          scaleY: 0,
-          rotate: '1turn',
-          duration: 2000,
-          easing: 'linear'
-        })
-        .finished.then(() => {
-          anime({
-            targets: '.grid .el',
-            scaleX: 0,
-            scaleY: 0,
-            rotate: '1turn',
-            duration: 2000,
-            easing: 'linear'
-          })
-        })
-      })
-      // anime({
-      //   targets: '.grid .el',
-      //   scaleX: 0,
-      //   scaleY: 0,
-      //   rotate: '1turn',
-      //   duration: 2000,
-      //   easing: 'linear'
-      // })
-      // .finished.then(() => {
-      //   anime({
-      //     targets: '.grid .els',
-      //     scaleX: 0,
-      //     scaleY: 0,
-      //     rotate: '1turn',
-      //     duration: 2000,
-      //     easing: 'linear'
-      //   });
-      // })
-
-    }, 1500);
+      loadingAnim()
+    }, 2000);
   }, [])
 
   console.log("window size: ", windowSize.width, windowSize.height, grid);
 
   return (
-    <LoadContainer>
+    <LoadContainer className='stagger-grid'>
       <div className='grid'>
         {windowSize.width && windowSize.height > 0 ? grid.verticalGrid.map(node => {
-          return grid.horizontalGrid.map((node, index) => (<div className={index % 2 === 0 ? 'small square els' : 'small square el'}></div>))
+          return grid.horizontalGrid.map((node, index) => (<div key={index} className={index % 2 === 0 ? 'small square el' : 'small square el'}></div>))
         }) : null}
       </div>
       {/* <button onClick={() => Loading()}>Init</button> */}
