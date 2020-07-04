@@ -13,7 +13,7 @@ const MainContainer = styled.div`
 
 function App() {
   const [theme, setTheme] = useState('light')
-  const [pageInitilized, setPageInitilized] = useState(false)
+  const [pageInitilized, setPageInitilized] = useState(true)
 
   const themeSelector = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light')
