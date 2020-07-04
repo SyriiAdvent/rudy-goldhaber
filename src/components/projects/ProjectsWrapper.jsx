@@ -22,18 +22,25 @@ const Project = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 `;
 
 const DetailsCard = styled.section`
   width: 50%;
   font-size: 1.0rem;
 
+  p {
+    font-weight: 300;
+  }
+
   ul {
+    padding: 0;
+    margin: 0;
+    width: 8rem;
     list-style: none;
     display: flex;
-    justify-content: flex-end;
-  };
+    justify-content: space-evenly;
+  }
 `
 
 const ProjectsWrapper = () => {
@@ -49,6 +56,7 @@ const ProjectsWrapper = () => {
             Currently expanding to larger regions across the far East.
           </p>
           <p>React | Redux | Router | Styled-Components | Node | PostgreSQL | AWS | Heroku </p>
+          <br />
           <ul>
             <li><a href='https://github.com/Labs24GOK'><GithubIcon /></a></li>
             <li><a href='https://www.notion.so/The-Garden-of-Knowledge-c6fe89f6e98d493fa597de84a8bd6818'><NotionIcon /></a></li>
@@ -57,7 +65,7 @@ const ProjectsWrapper = () => {
         </DetailsCard>
       </Project>
 
-      <Project>
+      {/* <Project>
         <ImageCard />
         <div>
           <h3>Garden of Knowledge</h3>
@@ -69,7 +77,7 @@ const ProjectsWrapper = () => {
         <div>
           <h3>Garden of Knowledge</h3>
         </div>
-      </Project>
+      </Project> */}
 
     </ProjectsContainer>
   );
