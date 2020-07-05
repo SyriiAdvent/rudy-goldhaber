@@ -11,7 +11,7 @@ const StyledTitle = styled.h1`
   padding: 0 2rem;
 
   background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.35);
+  background-color: rgba(0,0,0, 0.6);
   color: white;
   position: absolute;
   top: 50%;

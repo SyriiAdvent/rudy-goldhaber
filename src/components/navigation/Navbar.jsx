@@ -12,10 +12,10 @@ const NavContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.3);
+  background-color: rgba(0,0,0, 0.5);
   padding: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 99;
 
   @media (max-width: 786px) {
     flex-direction: column;
