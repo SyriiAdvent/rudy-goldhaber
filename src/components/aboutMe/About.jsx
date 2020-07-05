@@ -11,6 +11,7 @@ const AboutContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   font-weight: 400;
+  line-height: 1.4rem;
   `
 
 const Container = styled.div`
