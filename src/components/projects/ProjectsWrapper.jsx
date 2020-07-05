@@ -13,6 +13,7 @@ const ProjectsContainer = styled.div`
   justify-content: center;
   align-items: center;
   overflow-y: hidden;
+  line-height: 1.5rem;
 `;
 
 const Project = styled.div`
@@ -67,9 +68,9 @@ const ProjectsWrapper = () => {
           <p>React | Redux | Router | Styled-Components | Node | PostgreSQL | AWS | Heroku </p>
           <br />
           <ul>
-            <li><a href='https://github.com/Labs24GOK'><GithubIcon /></a></li>
-            <li><a href='https://www.notion.so/The-Garden-of-Knowledge-c6fe89f6e98d493fa597de84a8bd6818'><NotionIcon /></a></li>
-            <li><a href='https://thegardenedu.com'><WebLinkIcon /></a></li>
+            <li><a href='https://github.com/Labs24GOK' target="_blank"><GithubIcon /></a></li>
+            <li><a href='https://www.notion.so/The-Garden-of-Knowledge-c6fe89f6e98d493fa597de84a8bd6818' target="_blank"><NotionIcon /></a></li>
+            <li><a href='https://thegardenedu.com' target="_blank"><WebLinkIcon /></a></li>
           </ul>
         </DetailsCard>
       </Project>
@@ -87,8 +88,8 @@ const ProjectsWrapper = () => {
           <p>React | Redux | Router | MaterialUI | Firebase | Heroku </p>
           <br />
           <ul>
-            <li><a href='https://github.com/FlattenTheCurve19/Front-End'><GithubIcon /></a></li>
-            <li><a href='https://flatten-the-curve19.now.sh/'><WebLinkIcon /></a></li>
+            <li><a href='https://github.com/FlattenTheCurve19/Front-End' target="_blank"><GithubIcon /></a></li>
+            <li><a href='https://flatten-the-curve19.now.sh/' target="_blank"><WebLinkIcon /></a></li>
           </ul>
         </DetailsCard>
       </Project>

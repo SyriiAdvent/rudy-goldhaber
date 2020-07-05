@@ -4,7 +4,7 @@ import styled from "styled-components";
 const StyledTitle = styled.h1`
   height: 5rem;
   font-size: 1.8em;
-  line-height: 2.3rem;
+  line-height: 2.4rem;
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   margin: 3rem 0 2rem 0;
@@ -13,7 +13,6 @@ const StyledTitle = styled.h1`
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0, 0.35);
   color: white;
-  font-weight: bold;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -22,7 +21,6 @@ const StyledTitle = styled.h1`
   padding: 20px;
   text-align: center;
   width: 45rem;
-  transition: left 0.5s;
 
   @media (max-width: 786px) {
     width: 85%;
