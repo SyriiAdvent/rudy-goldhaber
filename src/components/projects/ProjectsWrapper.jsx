@@ -28,13 +28,13 @@ const Project = styled.div`
 
 const DetailsCard = styled.section`
   width: 50%;
-  padding: 1rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   font-size: 1.0rem;
   
   border-radius: 14px;
   background: #181e2b;
   box-shadow:  -10px -10px 19px #10141c, 
-             10px 10px 19px #20283a;
+                10px 10px 19px #20283a;
 
   p {
     font-weight: 300;
@@ -43,10 +43,12 @@ const DetailsCard = styled.section`
   ul {
     padding: 0;
     margin: 0;
-    width: 8rem;
     list-style: none;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+    li {
+      padding-right: 1rem;
+    }
   }
 `
 
@@ -74,11 +76,13 @@ const ProjectsWrapper = () => {
 
       <Project direction='row-reverse'>
         <ImageCard direction='reverse' project='flatten'/>
-        <DetailsCard>
+        <DetailsCard style={{ 
+          textAlign: 'right', 
+          boxShadow: ('10px -10px 19px #10141c','-10px 10px 19px #20283a') 
+          }}>
           <h3>Flatten the Curve</h3>
           <p>
-            Student and Staff management system for an English language school located in Bahrain.
-            Currently expanding to larger regions across the far East.
+          Covid-19 Information and geo-location based messaging app where people can post messages to help others relay information without any physical contact
           </p>
           <p>React | Redux | Router | MaterialUI | Firebase | Heroku </p>
           <br />
