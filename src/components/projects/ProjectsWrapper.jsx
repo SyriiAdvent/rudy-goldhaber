@@ -13,6 +13,7 @@ const ProjectsContainer = styled.div`
   justify-content: center;
   align-items: center;
   overflow-y: hidden;
+  line-height: 1.5rem;
 `;
 
 const Project = styled.div`
@@ -28,13 +29,13 @@ const Project = styled.div`
 
 const DetailsCard = styled.section`
   width: 50%;
-  padding: 1rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   font-size: 1.0rem;
   
   border-radius: 14px;
   background: #181e2b;
   box-shadow:  -10px -10px 19px #10141c, 
-             10px 10px 19px #20283a;
+                10px 10px 19px #20283a;
 
   p {
     font-weight: 300;
@@ -43,10 +44,12 @@ const DetailsCard = styled.section`
   ul {
     padding: 0;
     margin: 0;
-    width: 8rem;
     list-style: none;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+    li {
+      padding-right: 1rem;
+    }
   }
 `
 
@@ -65,26 +68,28 @@ const ProjectsWrapper = () => {
           <p>React | Redux | Router | Styled-Components | Node | PostgreSQL | AWS | Heroku </p>
           <br />
           <ul>
-            <li><a href='https://github.com/Labs24GOK'><GithubIcon /></a></li>
-            <li><a href='https://www.notion.so/The-Garden-of-Knowledge-c6fe89f6e98d493fa597de84a8bd6818'><NotionIcon /></a></li>
-            <li><a href='https://thegardenedu.com'><WebLinkIcon /></a></li>
+            <li><a href='https://github.com/Labs24GOK' target="_blank"><GithubIcon /></a></li>
+            <li><a href='https://www.notion.so/The-Garden-of-Knowledge-c6fe89f6e98d493fa597de84a8bd6818' target="_blank"><NotionIcon /></a></li>
+            <li><a href='https://thegardenedu.com' target="_blank"><WebLinkIcon /></a></li>
           </ul>
         </DetailsCard>
       </Project>
 
       <Project direction='row-reverse'>
         <ImageCard direction='reverse' project='flatten'/>
-        <DetailsCard>
+        <DetailsCard style={{ 
+          textAlign: 'right', 
+          boxShadow: ('10px -10px 19px #10141c','-10px 10px 19px #20283a') 
+          }}>
           <h3>Flatten the Curve</h3>
           <p>
-            Student and Staff management system for an English language school located in Bahrain.
-            Currently expanding to larger regions across the far East.
+          Covid-19 Information and geo-location based messaging app where people can post messages to help others relay information without any physical contact
           </p>
           <p>React | Redux | Router | MaterialUI | Firebase | Heroku </p>
           <br />
           <ul>
-            <li><a href='https://github.com/FlattenTheCurve19/Front-End'><GithubIcon /></a></li>
-            <li><a href='https://flatten-the-curve19.now.sh/'><WebLinkIcon /></a></li>
+            <li><a href='https://github.com/FlattenTheCurve19/Front-End' target="_blank"><GithubIcon /></a></li>
+            <li><a href='https://flatten-the-curve19.now.sh/' target="_blank"><WebLinkIcon /></a></li>
           </ul>
         </DetailsCard>
       </Project>

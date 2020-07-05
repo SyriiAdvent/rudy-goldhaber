@@ -26,17 +26,18 @@ const NavContainer = styled.div`
 const NameText = styled.h3`
   font-size: 1.8rem;
   margin-left: 1.5rem;
+  font-weight: 400;
 
   @media (max-width: 786px) {
     margin: 0;
   }
 `
 
-const Navbar = () => {
+const Navbar = props => {
   return (
     <NavContainer>
       <NameText>Rudy Goldhaber</NameText>
-      <LinksWrapper />
+      <LinksWrapper refs={props} />
     </NavContainer>
   )
 }
