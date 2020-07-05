@@ -33,7 +33,8 @@ const About = () => {
   const hello = 'Hello, my name is'.split('')
   const myName = 'Rudy Goldhaber'
   const likeIntro = 'I like to engineer software.'
-  const bio = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis facilisis metus. Quisque scelerisque ultrices vulputate. Sed sed velit metus. Sed eu ante a libero viverra rutrum non non elit. Sed hendrerit nibh vel dictum suscipit. Nunc mauris nibh, vulputate sed molestie non, porttitor semper magna. Etiam ultricies gravida nisl ut placerat.'
+  const bio = `There has never been more insiration then the day I decided to persue a career in
+  Software Engineering. The rush of challenges and new problems to solve are what keep me going. Can you give me a challenge? Contact me today!`
 
   const LetterAnimation = () => {
     anime({
@@ -60,7 +61,8 @@ const About = () => {
         <h2>Rudy Goldhaber</h2>
         <h4>I like to engineer software.</h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis facilisis metus. Quisque scelerisque ultrices vulputate. Sed sed velit metus. Sed eu ante a libero viverra rutrum non non elit. Sed hendrerit nibh vel dictum suscipit. Nunc mauris nibh, vulputate sed molestie non, porttitor semper magna. Etiam ultricies gravida nisl ut placerat.
+          There has never been more insiration then the day I decided to persue a career in
+          Software Engineering. The rush of challenges and new problems to solve are what keep me going. Can you give me a challenge? Contact me today!
         </p>
       </Container>
       <img src={me} style={{ width: '30%', borderRadius: '14px' }} />
