@@ -9,10 +9,10 @@ const LoadContainer = styled.div`
   justify-content: center;
   background: rgba(0, 0, 0, 0);
   position: absolute;
-  z-index: 999;
+  z-index: 100;
 `
 const Square = styled.div`
-  background-color: #1e71b6;
+  background-color: #0E111A;
   width: ${props => props.width || '20px' };
   height: ${props => props.height || '20px' };
 `
@@ -65,14 +65,15 @@ const StartPortfolio = props => {
     anime({
       targets: '.stagger-grid .el',
       scale: [
-        {value: 0, easing: 'easeOutSine', duration: 500},
+        {value: 0, easing: 'easeOutSine', duration: 800},
         // {value: 1, easing: 'easeInOutQuad', duration: 1200}
       ],
       delay: anime.stagger(50, { 
         grid: [
           Math.floor(window.innerWidth / 20) - 1, 
           Math.floor(window.innerHeight / 20) - 1
-        ], from: 'center' })
+        ], from: 'center' }),
+        background: '#20283a'
     }).finished.then(() => {
       props.updatePageInit()
       document.querySelector('.grid').remove();
