@@ -55,7 +55,7 @@ const ProjectsWrapper = () => {
     <ProjectsContainer>
 
       <Project>
-        <ImageCard />
+        <ImageCard project='garden' />
         <DetailsCard>
           <h3>Garden of Knowledge</h3>
           <p>
@@ -73,19 +73,18 @@ const ProjectsWrapper = () => {
       </Project>
 
       <Project direction='row-reverse'>
-        <ImageCard direction='reverse' />
+        <ImageCard direction='reverse' project='flatten'/>
         <DetailsCard>
-          <h3>Garden of Knowledge</h3>
+          <h3>Flatten the Curve</h3>
           <p>
             Student and Staff management system for an English language school located in Bahrain.
             Currently expanding to larger regions across the far East.
           </p>
-          <p>React | Redux | Router | Styled-Components | Node | PostgreSQL | AWS | Heroku </p>
+          <p>React | Redux | Router | MaterialUI | Firebase | Heroku </p>
           <br />
           <ul>
-            <li><a href='https://github.com/Labs24GOK'><GithubIcon /></a></li>
-            <li><a href='https://www.notion.so/The-Garden-of-Knowledge-c6fe89f6e98d493fa597de84a8bd6818'><NotionIcon /></a></li>
-            <li><a href='https://thegardenedu.com'><WebLinkIcon /></a></li>
+            <li><a href='https://github.com/FlattenTheCurve19/Front-End'><GithubIcon /></a></li>
+            <li><a href='https://flatten-the-curve19.now.sh/'><WebLinkIcon /></a></li>
           </ul>
         </DetailsCard>
       </Project>

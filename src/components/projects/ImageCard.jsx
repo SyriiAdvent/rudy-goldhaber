@@ -7,6 +7,11 @@ import gAdminDash from '../../assets/projects/thegardenedu/4thegardenedu_adminDa
 import gStaffSection from '../../assets/projects/thegardenedu/5thegardenedu_staffSectoin.png'
 import gStaffAttendance from '../../assets/projects/thegardenedu/6thegardenedu_staffAttendance.png'
 
+import fLanding from '../../assets/projects/flattencurve/1flattencurve_landing.png'
+import fStatistics from '../../assets/projects/flattencurve/2flattencurve_stats.png'
+import fAbout from '../../assets/projects/flattencurve/3flattencurve_about.png'
+import fMap from '../../assets/projects/flattencurve/4flattencurve_map.png'
+
 import anime from 'animejs'
 
 const ImageCardContainer = styled.div`
@@ -26,8 +31,10 @@ const FloatingProjectImg = styled.div`
 
 const ImageCard = props => {
   const [transitioned, setTransitioned] = useState(0)
-  const currentImage = [gLanding, gUserdash, gStudentDetails, gAdminDash, gStaffSection, gStaffAttendance]
-  const direction = props.direction
+  const [currentImage, setCurrentImage] = useState([])
+  const gardenImage = [gLanding, gUserdash, gStudentDetails, gAdminDash, gStaffSection, gStaffAttendance]
+  const flattenImage = [fLanding, fStatistics, fAbout, fMap]
+  const {direction, project } = props
 
   const imageAnimate = () => {
     return anime({
@@ -52,9 +59,21 @@ const ImageCard = props => {
     }
   }
 
+  const projectChecker = () => {
+    if(project === 'garden') {
+      setCurrentImage(gardenImage)
+    } else if(project === 'flatten') {
+      setCurrentImage(flattenImage)
+    }
+  }
+
+  useEffect(() => {
+    projectChecker()
+  }, [project])
+
   useEffect(() => {
       imageSlider()
-  }, [transitioned])
+  }, [transitioned, currentImage])
 
   return (
     <ImageCardContainer>
