@@ -6,10 +6,13 @@ import Navbar from './components/navigation/Navbar';
 import LandingPage from './components/landing/LandingPage';
 import StartPortfolio from './components/startPortfolio/StartPortfolio';
 import ProjectsWrapper from './components/projects/ProjectsWrapper';
+import About from './components/aboutMe/About';
 
 const MainContainer = styled.div`
   margin: 0;
   width: 100%;
+
+  font-family: 'Raleway'
 `
 
 function App() {
@@ -43,6 +46,7 @@ function App() {
         <LandingPage />
         {/* <button>About</button>
         <button onClick={themeSelector} >THEME</button> */}
+        <About />
         <ProjectsWrapper />
       </MainContainer>
       ) : <StartPortfolio updatePageInit={updatePageInit} />}

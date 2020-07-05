@@ -8,6 +8,7 @@ const LinkContainer = styled.ul`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  z-index: 22;
 
   li {
     margin: 0;
