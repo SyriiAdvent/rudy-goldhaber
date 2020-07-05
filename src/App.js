@@ -1,56 +1,62 @@
-import React, { useState, useEffect, useRef } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-import { GlobalStyles } from './components/themeUtils/GlobalStyles'
-import { lightTheme, darkTheme } from './components/themeUtils/Theme'
-import Navbar from './components/navigation/Navbar';
-import LandingPage from './components/landing/LandingPage';
-import StartPortfolio from './components/startPortfolio/StartPortfolio';
-import ProjectsWrapper from './components/projects/ProjectsWrapper';
-import About from './components/aboutMe/About';
+import React, { useState, useEffect, useRef } from "react";
+import styled, { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "./components/themeUtils/GlobalStyles";
+import { lightTheme, darkTheme } from "./components/themeUtils/Theme";
+import Navbar from "./components/navigation/Navbar";
+import LandingPage from "./components/landing/LandingPage";
+import StartPortfolio from "./components/startPortfolio/StartPortfolio";
+import ProjectsWrapper from "./components/projects/ProjectsWrapper";
+import About from "./components/aboutMe/About";
 
 const MainContainer = styled.div`
   margin: 0;
   width: 100%;
   scroll-behavior: smooth;
-
-  font-family: 'Raleway';
-`
+  font-family: "Raleway";
+`;
 
 function App() {
-  const [theme, setTheme] = useState('dark')
-  const [pageInitilized, setPageInitilized] = useState(true)
+  const [theme, setTheme] = useState("dark");
+  const [pageInitilized, setPageInitilized] = useState(false);
 
   // Smooth Scrolling handlers
-  const aboutRef = useRef()
-  const projectsRef = useRef()
-  const scrollToRef = (ref) => window.scrollTo({ behavior: 'smooth', top: ref.current.offsetTop })
-  const scrollToAbout = () => scrollToRef(aboutRef)
-  const scrollToProjects = () => scrollToRef(projectsRef)
+  const aboutRef = useRef();
+  const projectsRef = useRef();
+  const scrollToRef = ref =>
+    window.scrollTo({ behavior: "smooth", top: ref.current.offsetTop });
+  const scrollToAbout = () => scrollToRef(aboutRef);
+  const scrollToProjects = () => scrollToRef(projectsRef);
 
   const themeSelector = () => {
-    theme === 'light' ? setTheme('dark') : setTheme('dark')
-  }
+    theme === "light" ? setTheme("dark") : setTheme("dark");
+  };
 
   const osThemeHelper = () => {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark')
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      setTheme("dark");
     }
-  }
+  };
 
   const updatePageInit = () => {
-    setPageInitilized(true)
-  }
+    setPageInitilized(true);
+  };
 
   useEffect(() => {
-    osThemeHelper()
-  }, [])
+    osThemeHelper();
+  }, []);
 
   return (
-    <ThemeProvider theme={ theme === 'light' ? lightTheme : darkTheme }>
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      <StartPortfolio updatePageInit={updatePageInit} pageInitilized={pageInitilized} />
       <GlobalStyles />
-      { pageInitilized ? (
-        <MainContainer>
-        <Navbar scrollToAbout={scrollToAbout} scrollToProjects={scrollToProjects} />
+      <MainContainer>
+        <Navbar
+          scrollToAbout={scrollToAbout}
+          scrollToProjects={scrollToProjects}
+        />
         <LandingPage />
         <div ref={aboutRef}>
           <About />
@@ -59,8 +65,6 @@ function App() {
           <ProjectsWrapper />
         </div>
       </MainContainer>
-      ) : <StartPortfolio updatePageInit={updatePageInit} />}
-      
     </ThemeProvider>
   );
 }
