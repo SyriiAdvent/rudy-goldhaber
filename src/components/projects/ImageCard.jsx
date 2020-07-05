@@ -41,7 +41,8 @@ const ImageCard = props => {
       targets: (`${direction}`) === 'reverse' ? '.reverse' : '.animate-image',
       translateX: (`${direction}`) === 'reverse' ? 1000 : -1000,
       direction: 'alternate',
-      easing: 'easeInOutSine'
+      easing: 'easeInOutSine',
+      duration: 500
     })
   }
 
@@ -51,7 +52,7 @@ const ImageCard = props => {
         imageAnimate()
         setTimeout(() => {
           setTransitioned(transitioned + 1);
-        }, 1000)
+        }, 250)
       }, 5000)
     } 
     else {
