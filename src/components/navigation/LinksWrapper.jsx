@@ -15,6 +15,7 @@ const LinkContainer = styled.ul`
     padding: 0;
     text-decoration: none;
     list-style: none;
+    cursor: pointer;
   }
 
   @media (max-width: 786px) {
@@ -27,11 +28,12 @@ const Resume = styled.li`
   
 `
 
-const LinksWrapper = () => {
+const LinksWrapper = props => {
+  console.log(props);
   return (
     <LinkContainer>
-      <li>About</li>
-      <li>Projects</li>
+      <li onClick={() => props.refs.scrollToAbout()}>About</li>
+      <li onClick={() => props.refs.scrollToProjects()}>Projects</li>
       <li>Contact</li>
       <Resume>Resume</Resume>
     </LinkContainer>

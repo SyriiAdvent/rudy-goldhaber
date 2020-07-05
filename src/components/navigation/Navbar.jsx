@@ -33,11 +33,11 @@ const NameText = styled.h3`
   }
 `
 
-const Navbar = () => {
+const Navbar = props => {
   return (
     <NavContainer>
       <NameText>Rudy Goldhaber</NameText>
-      <LinksWrapper />
+      <LinksWrapper refs={props} />
     </NavContainer>
   )
 }
