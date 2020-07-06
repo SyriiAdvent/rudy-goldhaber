@@ -17,7 +17,7 @@ const StyledTitle = styled.h1`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -100%);
-  z-index: 2;
+  z-index: 14;
   padding: 20px;
   text-align: center;
   width: 45rem;

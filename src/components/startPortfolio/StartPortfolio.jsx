@@ -1,13 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import anime from 'animejs'
-import './StartPortfolio.css'
 
 const LoadContainer = styled.div`
   display: flex;
+  width: 100%;
+  height: 100%;
   justify-content: center;
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  z-index: 100;
+`
+const Square = styled.div`
+  background-color: #0E111A;
+  width: ${props => props.width || '20px' };
+  height: ${props => props.height || '20px' };
 `
 
+const Grid = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+`
 
 const StartPortfolio = props => {
   const [grid, setGrid] = useState({
@@ -21,8 +35,8 @@ const StartPortfolio = props => {
 
   const windowSizeHelper = () => {
     setWindowSize({
-      height: Math.floor(window.innerHeight / 20) - 1,
-      width: Math.floor(window.innerWidth / 20)
+      height: Math.floor(window.innerHeight / 20) + 1,
+      width: Math.floor(window.innerWidth / 20) + 1
     })
   }
 
@@ -51,15 +65,19 @@ const StartPortfolio = props => {
     anime({
       targets: '.stagger-grid .el',
       scale: [
-        {value: 0, easing: 'easeOutSine', duration: 500},
+        {value: 0, easing: 'easeOutSine', duration: 800},
         // {value: 1, easing: 'easeInOutQuad', duration: 1200}
       ],
       delay: anime.stagger(50, { 
         grid: [
-          Math.floor(window.innerWidth / 20), 
+          Math.floor(window.innerWidth / 20) - 1, 
           Math.floor(window.innerHeight / 20) - 1
-        ], from: 'center' })
-    }).finished.then(() => props.updatePageInit())
+        ], from: 'center' }),
+        background: '#20283a'
+    }).finished.then(() => {
+      props.updatePageInit()
+      document.querySelector('.grid').remove();
+    })
   }
 
   useEffect(() => {
@@ -78,15 +96,13 @@ const StartPortfolio = props => {
     }, 2000);
   }, [])
 
-  console.log("window size: ", windowSize.width, windowSize.height, grid);
-
   return (
     <LoadContainer className='stagger-grid'>
-      <div className='grid'>
+      <Grid className='grid'>
         {windowSize.width && windowSize.height > 0 ? grid.verticalGrid.map(node => {
-          return grid.horizontalGrid.map((node, index) => (<div key={index} className={index % 2 === 0 ? 'small square el' : 'small square el'}></div>))
+          return grid.horizontalGrid.map((node, index) => (<Square key={index} className={'small square el'} />))
         }) : null}
-      </div>
+      </Grid>
       {/* <button onClick={() => Loading()}>Init</button> */}
     </LoadContainer>
   )
