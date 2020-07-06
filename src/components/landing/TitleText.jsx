@@ -11,13 +11,13 @@ const StyledTitle = styled.h1`
   padding: 0 2rem;
 
   background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.35);
+  background-color: rgba(0,0,0, 0.6);
   color: white;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -100%);
-  z-index: 2;
+  z-index: 14;
   padding: 20px;
   text-align: center;
   width: 45rem;
