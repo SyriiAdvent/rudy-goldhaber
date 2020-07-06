@@ -38,10 +38,10 @@ const LinksWrapper = props => {
   console.log(props);
   return (
     <LinkContainer>
-      <li onClick={() => props.refs.scrollToAbout()}>About</li>
-      <li onClick={() => props.refs.scrollToProjects()}>Projects</li>
+      <li className='li-anime' onClick={() => props.refs.scrollToAbout()}>About</li>
+      <li className='li-anime' onClick={() => props.refs.scrollToProjects()}>Projects</li>
       {/* <li>Contact</li> */}
-      <Resume><a href={cv} target='_blank'>Resume</a></Resume>
+      <Resume className='li-anime'><a href={cv} target='_blank'>Resume</a></Resume>
     </LinkContainer>
   )
 }

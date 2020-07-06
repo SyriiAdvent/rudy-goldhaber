@@ -4,7 +4,7 @@ import anime from 'animejs'
 
 const LoadContainer = styled.div`
   display: flex;
-  width: 100% + 20px;
+  width: 100%;
   height: 100%;
   justify-content: center;
   background: rgba(0, 0, 0, 0);
