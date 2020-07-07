@@ -35,8 +35,8 @@ const StartPortfolio = props => {
 
   const windowSizeHelper = () => {
     setWindowSize({
-      height: Math.floor(window.innerHeight / 20) + 1,
-      width: Math.floor(window.innerWidth / 20) + 1
+      height: Math.floor(window.innerHeight / 20),
+      width: Math.floor(window.innerWidth / 20)
     })
   }
 
@@ -44,12 +44,12 @@ const StartPortfolio = props => {
     const xArray = []
     const yArray = []
 
-     for (let i = 0; i < windowSize.width; i++) {
+     for (let i = 0; i <= windowSize.width; i++) {
        console.log("looped y")
        yArray.push({ node: true })
      }
 
-     for (let i = 0; i < windowSize.height; i++) {
+     for (let i = 0; i <= windowSize.height; i++) {
       console.log("looped x")
       xArray.push({ node: true })
     }
@@ -76,7 +76,8 @@ const StartPortfolio = props => {
         background: '#20283a'
     }).finished.then(() => {
       props.updatePageInit()
-      document.querySelector('.grid').remove();
+      document.querySelector('.stagger-grid').remove();
+      document.querySelector('.landing-title-text').style.zIndex = 10;
     })
   }
 

@@ -17,7 +17,7 @@ const StyledTitle = styled.h1`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -100%);
-  z-index: 14;
+  z-index: 125;
   padding: 20px;
   text-align: center;
   width: 45rem;
@@ -61,7 +61,7 @@ const TitleText = () => {
   }, [turn]);
 
   return (
-    <StyledTitle>
+    <StyledTitle className='landing-title-text'>
       <span style={{ width: '150px' }}>
         I’m Rudy Goldhaber {" "}
         <a href='https://www.linkedin.com/in/rudy-goldhaber/'>{titles}</a>
