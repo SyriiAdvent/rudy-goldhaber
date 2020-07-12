@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import ImageCard from "./ImageCard";
-import GithubIcon from "../SVG/GithubIcon";
 import NotionIcon from "../SVG/NotionIcon";
-import WebLinkIcon from "../SVG/WebLinkIcon";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
+import { faGithubSquare, } from '@fortawesome/free-brands-svg-icons'
 
 const ProjectsContainer = styled.div`
   max-width: 100%;
@@ -47,8 +49,24 @@ const DetailsCard = styled.section`
     list-style: none;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+
     li {
       padding-right: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
     }
   }
 `
@@ -68,9 +86,23 @@ const ProjectsWrapper = () => {
           <p>React | Redux | Router | Styled-Components | Node | PostgreSQL | AWS | Heroku </p>
           <br />
           <ul>
-            <li><a href='https://github.com/Labs24GOK' target="_blank"><GithubIcon /></a></li>
-            <li><a href='https://www.notion.so/The-Garden-of-Knowledge-c6fe89f6e98d493fa597de84a8bd6818' target="_blank"><NotionIcon /></a></li>
-            <li><a href='https://thegardenedu.com' target="_blank"><WebLinkIcon /></a></li>
+            <li>
+              <a href='https://github.com/Labs24GOK' target="_blank">
+                <FontAwesomeIcon icon={faGithubSquare} size={'2x'} />
+              </a>
+            </li>
+
+            <li>
+              <a href='https://www.notion.so/The-Garden-of-Knowledge-c6fe89f6e98d493fa597de84a8bd6818' target="_blank">
+                <NotionIcon />
+              </a>
+            </li>
+
+            <li>
+              <a href='https://thegardenedu.com' target="_blank">
+                <FontAwesomeIcon icon={faExternalLinkAlt} size={'2x'} />
+              </a>
+            </li>
           </ul>
         </DetailsCard>
       </Project>
@@ -87,20 +119,22 @@ const ProjectsWrapper = () => {
           </p>
           <p>React | Redux | Router | MaterialUI | Firebase | Heroku </p>
           <br />
+
           <ul>
-            <li><a href='https://github.com/FlattenTheCurve19/Front-End' target="_blank"><GithubIcon /></a></li>
-            <li><a href='https://flatten-the-curve19.now.sh/' target="_blank"><WebLinkIcon /></a></li>
+            <li>
+              <a href='https://github.com/FlattenTheCurve19/Front-End' target="_blank">
+                <FontAwesomeIcon icon={faGithubSquare} size={'2x'} />
+              </a>
+            </li>
+
+            <li>
+              <a href='https://flatten-the-curve19.now.sh/' target="_blank">
+                <FontAwesomeIcon icon={faExternalLinkAlt} size={'2x'} />
+              </a>
+            </li>
           </ul>
         </DetailsCard>
       </Project>
-
-      {/* <Project>
-        <ImageCard />
-        <div>
-          <h3>Garden of Knowledge</h3>
-        </div>
-      </Project> */}
-
     </ProjectsContainer>
   );
 };
