@@ -78,8 +78,8 @@ const StartPortfolio = props => {
         background: '#20283a'
     }).finished.then(() => {
       props.updatePageInit()
-      // document.querySelector('.stagger-grid').remove();
-      // document.querySelector('.landing-title-text').style.zIndex = 10;
+      document.querySelector('.stagger-grid').remove();
+      document.querySelector('.landing-title-text').style.zIndex = 10;
     })
   }
 

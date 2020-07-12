@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import anime from 'animejs'
 import me from '../../assets/me.jpg'
 import './AboutMe.css'
+import SocialMediaList from '../social/SocialMediaList'
 
 const AboutContainer = styled.div`
   height: 100vh;
@@ -15,18 +16,65 @@ const AboutContainer = styled.div`
   `
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
   padding: 1rem;
-  width: 50%;
+  width: 80%;
   border-radius: 16px;
-  /* background: #0f141f;
-  box-shadow:  10px 10px 18px #090c13, 
-             -10px -10px 18px #151c2b; */
+
+  @media (max-width: 786px) {
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+`
+const AboutContents = styled.div`
+  margin: 0 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  p {
+    margin: 25px 0;
+    padding-right: 20%;
+  }
+
+  h2, h4 {
+    margin: 10px 0 0 0;
+  }
+
+  span {
+    margin-top: 15px;
+  }
+
+  @media (max-width: 786px) {
+    margin: 0;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    p { 
+      padding: 0 8px;
+    }
+  }
 `
 
-const myImage = styled.img`
-  src: me;
-  width: 20%;
-  height: 20%;
+const PreviewImage = styled.div`
+  width: 90%;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 786px) {
+    max-width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
 `
 
 const About = () => {
@@ -53,19 +101,24 @@ const About = () => {
   return (
     <AboutContainer>
       <Container>
-        <span classname='letter-stagger'>
-          <div className='letters'>{hello.map(letter => {
-            return (<span className='letts'>{letter}</span>)
-          })}</div>
-        </span>
-        <h2>Rudy Goldhaber</h2>
-        <h4>I like to engineer software.</h4>
-        <p>
-          There has never been more insiration then the day I decided to persue a career in
-          Software Engineering. The rush of challenges and new problems to solve are what keep me going. Can you give me a challenge? Contact me today!
-        </p>
+        <PreviewImage>
+          <img src={me} />
+        </PreviewImage>
+        <AboutContents>
+          <span classname='letter-stagger'>
+            <div className='letters'>{hello.map(letter => {
+              return (<span className='letts'>{letter}</span>)
+            })}</div>
+          </span>
+          <h2>Rudy Goldhaber</h2>
+          <h4>I like to engineer software.</h4>
+          <p>
+            There has never been more insiration then the day I decided to persue a career in
+            Software Engineering. The rush of challenges and new problems to solve are what keep me going. Can you give me a challenge? Contact me today!
+          </p>
+          <SocialMediaList />
+        </AboutContents>
       </Container>
-      <img src={me} style={{ width: '30%', borderRadius: '14px' }} />
     </AboutContainer>
   )
 }

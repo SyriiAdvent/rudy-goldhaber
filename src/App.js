@@ -55,7 +55,7 @@ function App() {
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
       <MainContainer>
-      {/* <StartPortfolio updatePageInit={updatePageInit} pageInitilized={pageInitilized} /> */}
+      <StartPortfolio updatePageInit={updatePageInit} pageInitilized={pageInitilized} />
         <Navbar
           scrollToAbout={scrollToAbout}
           scrollToProjects={scrollToProjects}
