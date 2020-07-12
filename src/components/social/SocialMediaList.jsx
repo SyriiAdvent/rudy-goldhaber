@@ -33,37 +33,38 @@ const SocialList = styled.div`
   }
 `
 
-const SocialMediaList = () => {
+const SocialMediaList = (props) => {
+  const size = props.size
   return (
     <SocialList>
       <ul>
         <li>
           <a href="https://www.linkedin.com/in/rudy-goldhaber/" target="_blank">
-            <FontAwesomeIcon icon={faLinkedin} size="3x" />
+            <FontAwesomeIcon icon={faLinkedin} size={size ? size : '3x'} />
           </a>
         </li>
 
         <li>
           <a href="https://github.com/SyriiAdvent" target="_blank">
-            <FontAwesomeIcon icon={faGithubSquare} size="3x" />
+            <FontAwesomeIcon icon={faGithubSquare} size={size ? size : '3x'} />
           </a>
         </li>
 
         <li>
           <a href="https://dev.to/syriiadvent" target="_blank">
-            <FontAwesomeIcon icon={faDev} size="3x" />
+            <FontAwesomeIcon icon={faDev} size={size ? size : '3x'} />
           </a>
         </li>
 
         <li>
           <a href="https://twitter.com/syriiadvent" target="_blank">
-            <FontAwesomeIcon icon={faTwitterSquare} size="3x" />
+            <FontAwesomeIcon icon={faTwitterSquare} size={size ? size : '3x'} />
           </a>
         </li>
 
         <li>
           <a href="mailto:rgoldhaber24@gmail.com" target="_blank" rel="nofollow noiopener noreferrer">
-            <FontAwesomeIcon icon={faEnvelope} size="3x" />
+            <FontAwesomeIcon icon={faEnvelope} size={size ? size : '3x'} />
           </a>
         </li>
       </ul>
