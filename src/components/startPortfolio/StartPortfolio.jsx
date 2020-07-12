@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import anime from 'animejs'
 
+const nodeSize = 20
+
 const LoadContainer = styled.div`
   display: flex;
   width: 100%;
@@ -13,8 +15,8 @@ const LoadContainer = styled.div`
 `
 const Square = styled.div`
   background-color: #0E111A;
-  width: ${props => props.width || '20px' };
-  height: ${props => props.height || '20px' };
+  width: ${props => props.width || nodeSize.toString() + 'px' };
+  height: ${props => props.height || nodeSize.toString() + 'px' };
 `
 
 const Grid = styled.div`
@@ -35,8 +37,8 @@ const StartPortfolio = props => {
 
   const windowSizeHelper = () => {
     setWindowSize({
-      height: Math.floor(window.innerHeight / 20) + 1,
-      width: Math.floor(window.innerWidth / 20) + 1
+      height: Math.floor(window.innerHeight / nodeSize),
+      width: Math.floor(window.innerWidth / nodeSize)
     })
   }
 
@@ -44,12 +46,12 @@ const StartPortfolio = props => {
     const xArray = []
     const yArray = []
 
-     for (let i = 0; i < windowSize.width; i++) {
+     for (let i = 0; i <= windowSize.width; i++) {
        console.log("looped y")
        yArray.push({ node: true })
      }
 
-     for (let i = 0; i < windowSize.height; i++) {
+     for (let i = 0; i <= windowSize.height; i++) {
       console.log("looped x")
       xArray.push({ node: true })
     }
@@ -66,17 +68,18 @@ const StartPortfolio = props => {
       targets: '.stagger-grid .el',
       scale: [
         {value: 0, easing: 'easeOutSine', duration: 800},
-        // {value: 1, easing: 'easeInOutQuad', duration: 1200}
+        // {value: 1, easing: 'easeInOutQuad', duration: 800}
       ],
       delay: anime.stagger(50, { 
         grid: [
-          Math.floor(window.innerWidth / 20) - 1, 
-          Math.floor(window.innerHeight / 20) - 1
+          Math.floor(window.innerWidth / nodeSize) - 1, 
+          Math.floor(window.innerHeight / nodeSize) - 1
         ], from: 'center' }),
         background: '#20283a'
     }).finished.then(() => {
       props.updatePageInit()
-      document.querySelector('.grid').remove();
+      // document.querySelector('.stagger-grid').remove();
+      // document.querySelector('.landing-title-text').style.zIndex = 10;
     })
   }
 

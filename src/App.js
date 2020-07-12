@@ -56,6 +56,7 @@ function App() {
         <Navbar
           scrollToAbout={scrollToAbout}
           scrollToProjects={scrollToProjects}
+          pageInitilized={pageInitilized}
         />
         <LandingPage />
         <div ref={aboutRef}>
