@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import anime from 'animejs'
 
-const nodeSize = 30
+const nodeSize = 20
 
 const LoadContainer = styled.div`
   display: flex;
@@ -78,8 +78,8 @@ const StartPortfolio = props => {
         background: '#20283a'
     }).finished.then(() => {
       props.updatePageInit()
-      document.querySelector('.stagger-grid').remove();
-      document.querySelector('.landing-title-text').style.zIndex = 10;
+      // document.querySelector('.stagger-grid').remove();
+      // document.querySelector('.landing-title-text').style.zIndex = 10;
     })
   }
 
