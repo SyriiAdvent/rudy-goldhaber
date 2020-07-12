@@ -3,10 +3,7 @@ import styled from 'styled-components'
 import anime from 'animejs'
 import me from '../../assets/me.jpg'
 import './AboutMe.css'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faGithubSquare, faTwitterSquare, faDev, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import SocialMediaList from '../social/SocialMediaList'
 
 const AboutContainer = styled.div`
   height: 100vh;
@@ -48,33 +45,6 @@ const AboutContents = styled.div`
 
   span {
     margin-top: 15px;
-  }
-
-  ul {
-    margin: 0;
-    padding: 0 0 20px 0;
-    display: flex;
-    margin-top: auto;
-
-    li {
-      list-style: none;
-      margin-left: 12px;
-
-      a {
-        color: #fff;
-        text-decoration: none;
-      }
-    }
-
-    li:first-child {
-      margin: 0
-    }
-
-    @media (max-width: 786px) {
-      margin: 0;
-      justify-content: center;
-      text-align: center;
-    }
   }
 
   @media (max-width: 786px) {
@@ -146,37 +116,7 @@ const About = () => {
             There has never been more insiration then the day I decided to persue a career in
             Software Engineering. The rush of challenges and new problems to solve are what keep me going. Can you give me a challenge? Contact me today!
           </p>
-          <ul>
-            <li>
-              <a href="https://www.linkedin.com/in/rudy-goldhaber/" target="_blank">
-                <FontAwesomeIcon icon={faLinkedin} size="3x" />
-              </a>
-            </li>
-
-            <li>
-              <a href="https://github.com/SyriiAdvent" target="_blank">
-                <FontAwesomeIcon icon={faGithubSquare} size="3x" />
-              </a>
-            </li>
-
-            <li>
-              <a href="https://dev.to/syriiadvent" target="_blank">
-                <FontAwesomeIcon icon={faDev} size="3x" />
-              </a>
-            </li>
-
-            <li>
-              <a href="https://twitter.com/syriiadvent" target="_blank">
-                <FontAwesomeIcon icon={faTwitterSquare} size="3x" />
-              </a>
-            </li>
-
-            <li>
-              <a href="mailto:rgoldhaber24@gmail.com" target="_blank" rel="nofollow noiopener noreferrer">
-                <FontAwesomeIcon icon={faEnvelope} size="3x" />
-              </a>
-            </li>
-          </ul>
+          <SocialMediaList />
         </AboutContents>
       </Container>
     </AboutContainer>
