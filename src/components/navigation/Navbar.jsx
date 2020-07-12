@@ -37,38 +37,48 @@ const NameText = styled.h3`
 `
 
 
-const Navbar = props => {
+const Navbar = (props) => {
+  const pageInitilized = props.pageInitilized
   const logo = 'Rudy Goldhaber'.split('')
+
   const dropAnimation = () => {
     anime({
       targets: '.nav-anime',
       translateY: [
-        { value: -100, duration: 500, delay: 0 },
-        { value: 0, duration: 500, delay: 4150 },
+        { value: 0, duration: 500, delay: 200 },
       ],
     })
     anime({
       targets: '.logo-anime',
       translateY: [
         { value: -100, duration: 500 },
-        { value: 0, duration: 500, delay: 5000 },
+        { value: 0, duration: 500, delay: 200 },
       ],
     })
     anime({
       targets: '.li-anime',
       translateY: [
-        { value: -100, duration: 500, endDelay: 6000 },
+        { value: -100, duration: 500, endDelay: 600 },
         { value: 0, duration: 500, delay: anime.stagger(400, { grid: [3, 0] }) },
       ],
     })
   }
   
   useEffect(() => {
-    dropAnimation()
-  }, [])
+    anime({
+      targets: '.nav-anime',
+      translateY: [
+        { value: -100, duration: 0, delay: 0 },
+      ],
+    })
+    if(pageInitilized) {
+      dropAnimation()
+    }
+  }, [pageInitilized])
 
   return (
     <NavContainer className='nav-anime'>
+      {console.log("mounted")}
       <NameText className='logo-anime'>Rudy Goldhaber</NameText>
       <LinksWrapper refs={props} />
     </NavContainer>
