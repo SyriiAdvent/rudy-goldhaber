@@ -20,8 +20,7 @@ const ProjectsContainer = styled.div`
 
 const Project = styled.div`
   width: 100%;
-  /* height: 40vh; */
-  /* background: red; */
+  margin: 0 0 1rem 0;
   display: flex;
   flex-direction: ${props => props.direction || 'row'};
   justify-content: space-evenly;
