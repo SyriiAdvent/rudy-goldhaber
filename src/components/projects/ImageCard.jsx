@@ -17,7 +17,15 @@ import anime from 'animejs'
 const ImageCardContainer = styled.div`
   width: 32rem;
   height: 25rem;
-  
+
+  @media (max-width: 786px) {
+    /* width: 28rem; */
+    height: 21rem;
+  }
+
+  @media (max-width: 512px) {
+    width: 95%;
+  }
 `
 
 const FloatingProjectImg = styled.div`
@@ -38,11 +46,11 @@ const ImageCard = props => {
 
   const imageAnimate = () => {
     return anime({
-      targets: (`${direction}`) === 'reverse' ? '.reverse' : '.animate-image',
-      translateX: (`${direction}`) === 'reverse' ? 1000 : -1000,
-      direction: 'alternate',
-      easing: 'easeInOutSine',
-      duration: 500
+      targets: '.animate-image',
+      opacity: [
+        {value: 0, easing: 'linear', duration: 700},
+        {value: 1, easing: 'linear', duration: 700}
+      ],
     })
   }
 
@@ -52,7 +60,7 @@ const ImageCard = props => {
         imageAnimate()
         setTimeout(() => {
           setTransitioned(transitioned + 1);
-        }, 250)
+        }, 700)
       }, 5000)
     } 
     else {
@@ -78,7 +86,7 @@ const ImageCard = props => {
 
   return (
     <ImageCardContainer>
-      <FloatingProjectImg className={'animate-image ' + props.direction} imgUrl={currentImage[transitioned]} />
+      <FloatingProjectImg className={'animate-image'} imgUrl={currentImage[transitioned]} />
     </ImageCardContainer>
   )
 }
