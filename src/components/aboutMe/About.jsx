@@ -81,8 +81,7 @@ const About = () => {
   const hello = 'Hello, my name is'.split('')
   const myName = 'Rudy Goldhaber'
   const likeIntro = 'I like to engineer software.'
-  const bio = `There has never been more insiration then the day I decided to persue a career in
-  Software Engineering. The rush of challenges and new problems to solve are what keep me going. Can you give me a challenge? Contact me today!`
+  const bio = `There has never been a more inspirational day then then the day I decided to persue a career in Software Engineering. The rush of challenges and new problems to solve are what keep me going. Can you give me a challenge?`
 
   const LetterAnimation = () => {
     anime({
