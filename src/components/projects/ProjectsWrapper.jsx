@@ -9,28 +9,37 @@ import { faGithubSquare, } from '@fortawesome/free-brands-svg-icons'
 
 const ProjectsContainer = styled.div`
   max-width: 100%;
-  padding: 5rem 2rem;
+  padding: 5rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow-y: hidden;
   line-height: 1.5rem;
+
+  @media (max-width: 786px) {
+    padding: 3rem 0.1rem;
+  }
 `;
 
 const Project = styled.div`
   width: 100%;
-  margin: 0 0 1rem 0;
+  margin: 4rem 0;
   display: flex;
   flex-direction: ${props => props.direction || 'row'};
   justify-content: space-evenly;
   align-items: center;
+
+  @media (max-width: 786px) {
+    flex-direction: column;
+  }
   
 `;
 
 const DetailsCard = styled.section`
   width: 50%;
   padding: 1rem 1rem 1rem 1rem;
+  margin: 0 1rem;
   font-size: 1.0rem;
   
   border-radius: 14px;
@@ -67,6 +76,10 @@ const DetailsCard = styled.section`
         text-align: center;
       }
     }
+  }
+
+  @media (max-width: 786px) {
+    width: 80%;
   }
 `
 

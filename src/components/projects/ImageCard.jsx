@@ -17,6 +17,15 @@ import anime from 'animejs'
 const ImageCardContainer = styled.div`
   width: 32rem;
   height: 25rem;
+
+  @media (max-width: 786px) {
+    /* width: 28rem; */
+    height: 21rem;
+  }
+
+  @media (max-width: 512px) {
+    width: 95%;
+  }
 `
 
 const FloatingProjectImg = styled.div`

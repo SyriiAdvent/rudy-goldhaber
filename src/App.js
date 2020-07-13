@@ -8,6 +8,7 @@ import StartPortfolio from "./components/startPortfolio/StartPortfolio";
 import ProjectsWrapper from "./components/projects/ProjectsWrapper";
 import About from "./components/aboutMe/About";
 import BlogWrapper from "./components/blog/BlogWrapper";
+import Footer from "./components/footer/Footer";
 
 const MainContainer = styled.div`
   margin: 0;
@@ -72,6 +73,7 @@ function App() {
         <div ref={projectsRef}>
           <ProjectsWrapper />
         </div>
+        <Footer />
       </MainContainer>
     </ThemeProvider>
   );
