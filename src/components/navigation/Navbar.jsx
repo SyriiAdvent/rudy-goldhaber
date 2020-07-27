@@ -45,7 +45,7 @@ const Navbar = (props) => {
     anime({
       targets: '.nav-anime',
       translateY: [
-        { value: 0, duration: 500, delay: 200 },
+        { value: 0, duration: 500, delay: 0 },
       ],
     })
     anime({
@@ -59,7 +59,7 @@ const Navbar = (props) => {
       targets: '.li-anime',
       translateY: [
         { value: -100, duration: 500, endDelay: 600 },
-        { value: 0, duration: 500, delay: anime.stagger(400, { grid: [3, 0] }) },
+        { value: 0, duration: 500, delay: anime.stagger(400, { grid: [4, 0], from: 'last' }) },
       ],
     })
   }
