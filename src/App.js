@@ -67,11 +67,11 @@ function App() {
         <div ref={aboutRef}>
           <About />
         </div>
-        <div ref={blogRef}>
-          <BlogWrapper />
-        </div>
         <div ref={projectsRef}>
           <ProjectsWrapper />
+        </div>
+        <div ref={blogRef}>
+          <BlogWrapper />
         </div>
         <Footer />
       </MainContainer>
