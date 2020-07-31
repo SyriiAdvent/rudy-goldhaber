@@ -111,9 +111,9 @@ const About = () => {
           </span>
           <h2>Rudy Goldhaber</h2>
           <h4>I like to engineer software.</h4>
-          <p>
-            There has never been more insiration then the day I decided to persue a career in
-            Software Engineering. The rush of challenges and new problems to solve are what keep me going. Can you give me a challenge? Contact me today!
+          <p style={{ lineHeight: '1.7rem' }}>
+          A Software Engineer with a passion for finding new challenges and learning new skills every day.
+          My Engineering skills come full of strong scalable problem-solving solutions. Whether it is Frontend or Backend, I have no limits to how rapidly I can excel in the technology Industry.
           </p>
           <SocialMediaList />
         </AboutContents>

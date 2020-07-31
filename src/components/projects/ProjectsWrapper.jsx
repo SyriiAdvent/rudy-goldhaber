@@ -92,10 +92,9 @@ const ProjectsWrapper = () => {
         <DetailsCard>
           <h3>Garden of Knowledge</h3>
           <p>
-            Student and Staff management system for an English language school located in Bahrain.
-            Currently expanding to larger regions across the far East.
+          Student & Staff Management system for an English language school Including student onboarding system with placement testing. Currently in Bahrain and expanding to several other countries.
           </p>
-          <p>React | Redux | Router | Styled-Components | Node | PostgreSQL | AWS | Heroku </p>
+          <p>React | Redux | Routing | Postgres | Styled Components | Nodejs | Expressjs | Knexjs | SQL | AWS | S3 | Route 53 | CloudFront </p>
           <br />
           <ul>
             <li>
@@ -127,9 +126,9 @@ const ProjectsWrapper = () => {
           }}>
           <h3>Flatten the Curve</h3>
           <p>
-          Covid-19 Information and geo-location based messaging app where people can post messages to help others relay information without any physical contact
+          Covid-19 Information and geo-location-based messaging app where people can post messages to help others relay information without any physical contact.
           </p>
-          <p>React | Redux | Router | MaterialUI | Firebase | Heroku </p>
+          <p>React | Redux | Routing | MaterialUI | Nodejs | Expressjs | Auth | Google Auth | Firebase | Google Cloud </p>
           <br />
 
           <ul>
@@ -141,6 +140,82 @@ const ProjectsWrapper = () => {
 
             <li>
               <a href='https://flatten-the-curve19.now.sh/' target="_blank">
+                <FontAwesomeIcon icon={faExternalLinkAlt} size={'2x'} />
+              </a>
+            </li>
+          </ul>
+        </DetailsCard>
+      </Project>
+
+      <Project>
+        <ImageCard project='conway' />
+        <DetailsCard>
+          <h3>Conway's Game of Life</h3>
+          <p>
+          The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, alive or dead, (or populated and unpopulated, respectively). Every cell interacts with its eight neighbors, which are the cells that are horizontally, vertically, or diagonally adjacent.
+          </p>
+          <p>TypeScript | React | Recoiljs | MaterialUI | AWS </p>
+          <br />
+          <ul>
+            <li>
+              <a href='https://github.com/SyriiAdvent/game-of-life' target="_blank">
+                <FontAwesomeIcon icon={faGithubSquare} size={'2x'} />
+              </a>
+            </li>
+
+            <li>
+              <a href='https://gameoflife.rudyg.dev/' target="_blank">
+                <FontAwesomeIcon icon={faExternalLinkAlt} size={'2x'} />
+              </a>
+            </li>
+          </ul>
+        </DetailsCard>
+      </Project>
+      
+      <Project>
+        {/* <ImageCard /> */}
+        <DetailsCard>
+          <h3>Essentialism</h3>
+          <p>
+          Keeping goals and things to do organized in an Essential fashion is hard to do. That's were Essentialism comes in. Your One-stop task manager making sure your task is in line with your life goals and aspirations.
+          </p>
+          <p>Nodejs | Expressjs | Postgres | Knexjs | Authentication | JWT | Token Sessions | Heroku</p>
+          <br />
+          <ul>
+            <li>
+              <a href='https://github.com/bwt-essentialism-2/Back-End' target="_blank">
+                <FontAwesomeIcon icon={faGithubSquare} size={'2x'} />
+              </a>
+            </li>
+
+            <li>
+              <a href='https://documenter.getpostman.com/view/10614826/SzfDwjom?version=latest' target="_blank">
+                <FontAwesomeIcon icon={faExternalLinkAlt} size={'2x'} />
+              </a>
+            </li>
+          </ul>
+        </DetailsCard>
+      </Project>
+
+      <Project>
+        {/* <ImageCard /> */}
+        <DetailsCard>
+          <h3>Things To-Do</h3>
+          <p>
+          A simple Todo app made in a day just to learn React Native with TypeScript.
+          Proof of concept that any new language or technology can be picked up very quickly by myself. Supports iOS & Android
+          </p>
+          <p>TypeScript | React Native | Expo </p>
+          <br />
+          <ul>
+            <li>
+              <a href='https://github.com/SyriiAdvent/Things-ToDo' target="_blank">
+                <FontAwesomeIcon icon={faGithubSquare} size={'2x'} />
+              </a>
+            </li>
+
+            <li>
+              <a href='https://expo.io/appetize-simulator?url=https://expo.io/@advent/Things-Todo' target="_blank">
                 <FontAwesomeIcon icon={faExternalLinkAlt} size={'2x'} />
               </a>
             </li>

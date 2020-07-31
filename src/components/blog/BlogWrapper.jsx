@@ -27,6 +27,11 @@ const BreakFade = styled.div`
   );
 `
 
+const BlogTitle = styled.h1`
+  font-size: 10rem;
+  text-decoration: underline;
+`
+
 const BlogWrapper = () => {
   const [blog, setBlog] = useState([])
 
@@ -40,6 +45,7 @@ const BlogWrapper = () => {
 
   return (
     <BlogContainer>
+      <BlogTitle>Blogs</BlogTitle>
         {blog.length > 0 ? 
           blog.map(article => {
             return (

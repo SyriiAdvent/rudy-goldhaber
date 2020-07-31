@@ -12,6 +12,12 @@ import fStatistics from '../../assets/projects/flattencurve/2flattencurve_stats.
 import fAbout from '../../assets/projects/flattencurve/3flattencurve_about.png'
 import fMap from '../../assets/projects/flattencurve/4flattencurve_map.png'
 
+import conway1 from '../../assets/projects/conways/VDggNxFpdb.png'
+import conway2 from '../../assets/projects/conways/cWAIZkA9FR.png'
+import conway3 from '../../assets/projects/conways/ZrlLYggi8K.png'
+import conway4 from '../../assets/projects/conways/Y8XOTC03cq.png'
+import conway5 from '../../assets/projects/conways/p3mBSI1lf4.png'
+
 import anime from 'animejs'
 
 const ImageCardContainer = styled.div`
@@ -42,6 +48,7 @@ const ImageCard = props => {
   const [currentImage, setCurrentImage] = useState([])
   const gardenImage = [gLanding, gUserdash, gStudentDetails, gAdminDash, gStaffSection, gStaffAttendance]
   const flattenImage = [fLanding, fStatistics, fAbout, fMap]
+  const conwayImage = [conway1, conway2, conway3, conway4, conway5, ]
   const {direction, project } = props
 
   const imageAnimate = () => {
@@ -73,6 +80,8 @@ const ImageCard = props => {
       setCurrentImage(gardenImage)
     } else if(project === 'flatten') {
       setCurrentImage(flattenImage)
+    } else if(project === 'conway') {
+      setCurrentImage(conwayImage)
     }
   }
 
