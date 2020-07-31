@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import cv from '../../assets/Rudy_Goldhaber_Software_Engineer_Resume.pdf'
+import cv from '../../assets/Rudy_Goldhaber_SWE_Resume.pdf'
 
 const LinkContainer = styled.ul`
   margin: 0;
