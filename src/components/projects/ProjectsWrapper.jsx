@@ -88,12 +88,15 @@ const ProjectsWrapper = () => {
     <ProjectsContainer>
 
       <Project>
-        <ImageCard project='garden' />
+        <a href='https://thegardenedu.com' target="_blank">
+          <ImageCard project='garden' />
+        </a>
         <DetailsCard>
-          <h3>Garden of Knowledge</h3>
+          <h2>Garden of Knowledge</h2>
           <p>
           Student & Staff Management system for an English language school Including student onboarding system with placement testing. Currently in Bahrain and expanding to several other countries.
           </p>
+          <h4>Technologies used:</h4>
           <p>React | Redux | Routing | Postgres | Styled Components | Nodejs | Expressjs | Knexjs | SQL | AWS | S3 | Route 53 | CloudFront </p>
           <br />
           <ul>
@@ -119,21 +122,24 @@ const ProjectsWrapper = () => {
       </Project>
 
       <Project direction='row-reverse'>
-        <ImageCard direction='reverse' project='flatten'/>
+        <a href='https://github.com/FlattenTheCurve19/Front-End' target="_blank">
+          <ImageCard direction='reverse' project='flatten'/>
+        </a>
         <DetailsCard style={{ 
           textAlign: 'right', 
           boxShadow: ('10px -10px 19px #10141c','-10px 10px 19px #20283a') 
           }}>
-          <h3>Flatten the Curve</h3>
+          <h2>Flatten the Curve</h2>
           <p>
           Covid-19 Information and geo-location-based messaging app where people can post messages to help others relay information without any physical contact.
           </p>
+          <h4>Technologies used:</h4>
           <p>React | Redux | Routing | MaterialUI | Nodejs | Expressjs | Auth | Google Auth | Firebase | Google Cloud </p>
           <br />
 
           <ul>
             <li>
-              <a href='https://github.com/FlattenTheCurve19/Front-End' target="_blank">
+              <a href='https://flatten-the-curve19.now.sh/' target="_blank">
                 <FontAwesomeIcon icon={faGithubSquare} size={'2x'} />
               </a>
             </li>
@@ -148,12 +154,15 @@ const ProjectsWrapper = () => {
       </Project>
 
       <Project>
-        <ImageCard project='conway' />
+        <a href='https://gameoflife.rudyg.dev/' target="_blank">
+          <ImageCard project='conway' />
+        </a>
         <DetailsCard>
-          <h3>Conway's Game of Life</h3>
+          <h2>Conway's Game of Life</h2>
           <p>
           The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, alive or dead, (or populated and unpopulated, respectively). Every cell interacts with its eight neighbors, which are the cells that are horizontally, vertically, or diagonally adjacent.
           </p>
+          <h4>Technologies used:</h4>
           <p>TypeScript | React | Recoiljs | MaterialUI | AWS </p>
           <br />
           <ul>
@@ -175,10 +184,11 @@ const ProjectsWrapper = () => {
       <Project>
         {/* <ImageCard /> */}
         <DetailsCard>
-          <h3>Essentialism</h3>
+          <h2>Essentialism</h2>
           <p>
           Keeping goals and things to do organized in an Essential fashion is hard to do. That's were Essentialism comes in. Your One-stop task manager making sure your task is in line with your life goals and aspirations.
           </p>
+          <h4>Technologies used:</h4>
           <p>Nodejs | Expressjs | Postgres | Knexjs | Authentication | JWT | Token Sessions | Heroku</p>
           <br />
           <ul>
@@ -200,11 +210,12 @@ const ProjectsWrapper = () => {
       <Project>
         {/* <ImageCard /> */}
         <DetailsCard>
-          <h3>Things To-Do</h3>
+          <h2>Things To-Do</h2>
           <p>
           A simple Todo app made in a day just to learn React Native with TypeScript.
           Proof of concept that any new language or technology can be picked up very quickly by myself. Supports iOS & Android
           </p>
+          <h4>Technologies used:</h4>
           <p>TypeScript | React Native | Expo </p>
           <br />
           <ul>

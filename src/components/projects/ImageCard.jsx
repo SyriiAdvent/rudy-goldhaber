@@ -19,6 +19,7 @@ import conway4 from '../../assets/projects/conways/Y8XOTC03cq.png'
 import conway5 from '../../assets/projects/conways/p3mBSI1lf4.png'
 
 import anime from 'animejs'
+import { useRef } from 'react'
 
 const ImageCardContainer = styled.div`
   width: 32rem;
@@ -46,6 +47,7 @@ const FloatingProjectImg = styled.div`
 const ImageCard = props => {
   const [transitioned, setTransitioned] = useState(0)
   const [currentImage, setCurrentImage] = useState([])
+  const [playing, setPlaying] = useState(true)
   const gardenImage = [gLanding, gUserdash, gStudentDetails, gAdminDash, gStaffSection, gStaffAttendance]
   const flattenImage = [fLanding, fStatistics, fAbout, fMap]
   const conwayImage = [conway1, conway2, conway3, conway4, conway5, ]
@@ -55,8 +57,8 @@ const ImageCard = props => {
     return anime({
       targets: '.animate-image',
       opacity: [
-        {value: 0, easing: 'linear', duration: 700},
-        {value: 1, easing: 'linear', duration: 700}
+        {value: 0, easing: 'linear', duration: 1000, endDelay: 50},
+        {value: 1, easing: 'linear', duration: 1000}
       ],
     })
   }
@@ -67,7 +69,7 @@ const ImageCard = props => {
         imageAnimate()
         setTimeout(() => {
           setTransitioned(transitioned + 1);
-        }, 700)
+        }, 1000)
       }, 5000)
     } 
     else {
@@ -89,13 +91,24 @@ const ImageCard = props => {
     projectChecker()
   }, [project])
 
+  const playAnimationRef = useRef(playing)
+  playAnimationRef.current = playing
+
   useEffect(() => {
+    if(playAnimationRef.current) {
       imageSlider()
-  }, [transitioned, currentImage])
+    }
+    return () => {
+      imageSlider()
+    }
+    
+  }, [playAnimationRef.current, transitioned, currentImage])
 
   return (
     <ImageCardContainer>
-      <FloatingProjectImg className={'animate-image'} imgUrl={currentImage[transitioned]} />
+      <FloatingProjectImg className={'animate-image'} imgUrl={currentImage[transitioned]} onMouseEnter={() => setPlaying(false)}
+      onMouseLeave={() => setPlaying(true)}
+      />
     </ImageCardContainer>
   )
 }

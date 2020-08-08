@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import cv from '../../assets/Rudy_Goldhaber_SWE_Resume.pdf'
+import cv from '../../assets/Rudy_Goldhaber_SE_Resume.pdf'
 
 const LinkContainer = styled.ul`
   margin: 0;
@@ -41,7 +41,7 @@ const LinksWrapper = props => {
       <li className='li-anime' onClick={() => props.refs.scrollToProjects()}>Projects</li>
       <li className='li-anime' onClick={() => props.refs.scrollToBlog()}>Blog</li>
       {/* <li>Contact</li> */}
-      <Resume className='li-anime'><a href={cv} target='_blank'>Resume</a></Resume>
+      <Resume className='li-anime'><a href={require('../../assets/Rudy_Goldhaber_SE_Resume.pdf')} download='Rudy_Goldhaber_SE_Resume.pdf'>Resume</a></Resume>
     </LinkContainer>
   )
 }
