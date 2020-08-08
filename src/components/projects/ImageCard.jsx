@@ -57,23 +57,31 @@ const ImageCard = props => {
     return anime({
       targets: '.animate-image',
       opacity: [
-        {value: 0, easing: 'linear', duration: 1000, endDelay: 50},
-        {value: 1, easing: 'linear', duration: 1000}
+        {value: 0, easing: 'linear', duration: 700}
+        // {value: 1, easing: 'linear', duration: 1000}
       ],
+    }).finished.then(() =>{
+      if(transitioned >= currentImage.length - 1) {
+        setTransitioned(0)
+      } else {
+        setTransitioned(transitioned + 1);
+      }
+    }).then(() => {
+      anime({
+        targets: '.animate-image',
+        opacity: [
+          {value: 1, easing: 'linear', duration: 700}
+        ],
+      })
     })
+      
   }
 
   const imageSlider = () => {
     if(transitioned < currentImage.length) {
       setTimeout(() => {
         imageAnimate()
-        setTimeout(() => {
-          setTransitioned(transitioned + 1);
-        }, 1000)
       }, 5000)
-    } 
-    else {
-      setTransitioned(0)
     }
   }
 
@@ -106,9 +114,7 @@ const ImageCard = props => {
 
   return (
     <ImageCardContainer>
-      <FloatingProjectImg className={'animate-image'} imgUrl={currentImage[transitioned]} onMouseEnter={() => setPlaying(false)}
-      onMouseLeave={() => setPlaying(true)}
-      />
+      <FloatingProjectImg className={'animate-image'} imgUrl={currentImage[transitioned]} />
     </ImageCardContainer>
   )
 }
